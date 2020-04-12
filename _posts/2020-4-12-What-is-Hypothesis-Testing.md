@@ -1,7 +1,7 @@
 ---
 layout: post
 title: What is Hypothesis Testing?
-published: true
+published: true 
 categories:
     - statistics
 tags:
@@ -36,20 +36,20 @@ By declaring the underlined part in the alternative hypothesis, you are imposing
 
 To test your hypothesis, you note the amount of Z produced each hour for 10 hours. The data is:
 
-```
-29   25   26   34   33   23   35   29   27   31
-```
+> 29   25   26   34   33   23   35   29   27   31
 
 It is easy to see in a single glance that the average number of Z produced would not on average be 25\. You can say by that alone that the null hypothesis is wrong, but how can you be really sure of that? The statistics tests help you to calculate **the probability of the empirical data happening should the null hypothesis is correct**.
 
 Here we will be using a one sample Student's t-test as the test to measure the said probability². We can calculate this easily in R language using the code:
 
-<pre style="padding-left: 60px;"># Input the data
+```
+# Input the data
 > data = c(29, 25, 26, 34, 33, 23, 35, 29, 27, 31)
 
 # Do two-sided hypothesis testing using one sample t-test, 
 # against the null hypothesis that the actual mean is 25
-> t.test(x = data, alternative = "two.sided", mu = 25)</pre>
+> t.test(x = data, alternative = "two.sided", mu = 25)
+```
 
 ![One Sample T-test Example]({{ site.baseurl }}/images/output_R_ttest.jpg)
 
@@ -96,6 +96,8 @@ So, how do you check whether the average Z production is 35 unit/hour or not? Th
 I would stop there for now.
 
 Thank you for reading this article! Do ask me if anything is still confusing, and correct me if something is wrong.
+
+---
 
 **Notes**:
 
