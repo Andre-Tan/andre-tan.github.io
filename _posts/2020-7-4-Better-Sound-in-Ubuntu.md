@@ -22,7 +22,9 @@ Does this mean my sound card is bad? This is even less logical because my Ubuntu
  
  Good thing this is not the case. The reason is simply that **Ubuntu default sound configuration is bad**. 
  
-Rather than me explaining what to do, I think I better refer everyone to my primary reference: https://medium.com/@gamunu/enable-high-quality-audio-on-linux-6f16f3fe7e1f
+Rather than me explaining what to do, I think I better refer everyone to my primary reference: [Gamunu Balagalla's Enable High Quality Audio on Linux](https://medium.com/@gamunu/enable-high-quality-audio-on-linux-6f16f3fe7e1f)
+ 
+ Thank you to Gamunu Balagalla for this article!
  
  I am now happy with my sounds and I found new appreciation for my Dragonfly Black. I had planned to sell it and upgrade to a Dragonfly Red/Cobalt before I found this solution, but I think I will hold on to this DAC longer now that my music sounds as good as I expected.
  
