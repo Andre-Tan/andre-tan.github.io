@@ -1,55 +1,36 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>My Latest Gists</title>
-  <style>
-    body { font-family: sans-serif; padding: 2em; max-width: 800px; margin: auto; }
-    li { margin-bottom: 1em; }
-    a.button {
-      display: inline-block;
-      margin-top: 1em;
-      padding: 0.5em 1em;
-      background-color: #0366d6;
-      color: white;
-      text-decoration: none;
-      border-radius: 4px;
-    }
-  </style>
-</head>
-<body>
-  <h1>📂 My Latest GitHub Gists</h1>
-  <ul id="gist-list">Loading...</ul>
-  <div id="more-link"></div>
+---
+layout: default
+---
 
-  <script>
-    const username = "Andre-Tan"; // CHANGE THIS
-    const gistAPI = `https://api.github.com/users/${username}/gists?per_page=10`; // fetch 10 to check if >5 exist
+<ul id="gist-list">Loading...</ul>
+<div id="more-link"></div>
 
-    fetch(gistAPI)
-      .then(res => res.json())
-      .then(gists => {
-        const list = document.getElementById("gist-list");
-        const moreLink = document.getElementById("more-link");
-        list.innerHTML = "";
+<script>
+  const username = "Andre-Tan"; // CHANGE THIS
+  const gistAPI = `https://api.github.com/users/${username}/gists?per_page=10`; // fetch 10 to check if >5 exist
 
-        gists.slice(0, 8).forEach(gist => {
-          const desc = gist.description || "No description";
-          const url = gist.html_url;
-          const files = Object.keys(gist.files).join(", ");
-          const date = gist.updated_at.slice(0, 10);
-          const li = document.createElement("li");
-          li.innerHTML = `<a href="${url}" target="_blank"><strong>${files}</strong></a><br>${desc}<br><small>Last updated: ${date}</small>`;
-          list.appendChild(li);
-        });
+  fetch(gistAPI)
+    .then(res => res.json())
+    .then(gists => {
+      const list = document.getElementById("gist-list");
+      const moreLink = document.getElementById("more-link");
+      list.innerHTML = "";
 
-        if (gists.length > 5) {
-          moreLink.innerHTML = `<a class="button" href="https://gist.github.com/${username}" target="_blank">View all gists →</a>`;
-        }
-      })
-      .catch(() => {
-        document.getElementById("gist-list").innerHTML = "<li>Failed to load gists.</li>";
+      gists.slice(0, 8).forEach(gist => {
+        const desc = gist.description || "No description";
+        const url = gist.html_url;
+        const files = Object.keys(gist.files).join(", ");
+        const date = gist.updated_at.slice(0, 10);
+        const li = document.createElement("li");
+        li.innerHTML = `<a href="${url}" target="_blank"><strong>${files}</strong></a><br>${desc}<br><small>Last updated: ${date}</small>`;
+        list.appendChild(li);
       });
-  </script>
-</body>
-</html>
+
+      if (gists.length > 5) {
+        moreLink.innerHTML = `<a class="button" href="https://gist.github.com/${username}" target="_blank">View all gists →</a>`;
+      }
+    })
+    .catch(() => {
+      document.getElementById("gist-list").innerHTML = "<li>Failed to load gists.</li>";
+    });
+</script>
