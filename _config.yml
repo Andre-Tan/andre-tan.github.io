@@ -85,4 +85,4 @@ exclude:
   - README.md
   - CNAME
 
-remote_theme: daviddarnes/alembic@main
+theme: jekyll-theme-slate
