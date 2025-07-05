@@ -14,7 +14,7 @@ layout: default
           const moreLink = document.getElementById("more-link");
           list.innerHTML = "";
 
-          gists.slice(0, 8).forEach(gist => {
+          gists.slice(0, 5).forEach(gist => {
             const desc = gist.description || "No description";
             const url = gist.html_url;
             const files = Object.keys(gist.files).join(", ");
@@ -23,7 +23,7 @@ layout: default
             const article = document.createElement("article");
             article.className = "gist-item";
 
-            const title = document.createElement("h2");
+            const title = document.createElement("h3");
             title.innerHTML = `<a href="${url}" target="_blank">${files}</a>`;
 
             const description = document.createElement("p");
